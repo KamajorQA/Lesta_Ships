@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import { lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import { ErrorBoundary } from './components/ErrorBoundary';
+import { MainLayout } from './layouts/MainLayout';
 import './App.css';
+
+const HomePage = lazy(() => import('./pages/HomePage'));
+// const SingleCatPage = lazy(() => import('./pages/SingleCatPage'));
+// const FavoritePage = lazy(() => import('./pages/FavoritePage'));
+// const CreateCatPage = lazy(() => import('./pages/CreateCatPage'));
+// const UserInfoPage = lazy(() => import('./pages/UserInfoPage'));
+const ContactsPage = lazy(() => import('./pages/ContactsPage'));
+// const LoginPage = lazy(() => import('./pages/LoginPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <ErrorBoundary>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<HomePage />} />
+            {/* <Route path="cats/:catId" element={<SingleCatPage />} /> */}
+            {/* <Route path="favorites" element={<FavoritePage />} /> */}
+            {/* <Route path="userinfo" element={<UserInfoPage />} /> */}
+            {/* <Route path="newcat" element={<CreateCatPage />} /> */}
+            <Route path="contacts" element={<ContactsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+          {/* <Route path="/login" element={<LoginPage />} /> */}
+        </Routes>
+      </ErrorBoundary>
+    </Router>
   );
 }
 

@@ -1,46 +1,76 @@
-# Getting Started with Create React App
+# Test assignment for Lesta Games.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**_SPA-проект получения с удаленного сервера по протоколу GraphQL и отображения в табличном виде списка короблей игры World of Warships с возможностью сортировки по заданным параметрам_**
 
-## Available Scripts
+**_[Ссылка на ТЗ](https://gist.github.com/nonamenix/fc7609de3ebe2642db6324bc962295b2)_**
+Дополнительно ТЗ продублировано в текстовом формате в директории `src/assets`.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+### Использован шаблон c-r-a --template typescript
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Для первичной инициализации проекта в его директории сперва нужно установить зависимости с помощью команды:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```sh
+npm install
+```
 
-### `npm test`
+Для локального запуска проекта нужно использовать команду
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+npm start
+```
 
-### `npm run build`
+## В проекте настроен CI/CD через GitHub Actions.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![warships status badge](https://github.com/KamajorQA/Lesta_Ships/actions/workflows/lesta-ships.yml/badge.svg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**_Деплой реализован через Netlify._**
+**_Ссылка на продакшн стенд: [lesta-ships](https://lesta-ships.netlify.app/)_**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Автоформатирование и проверка кода реализованы через Prettier и ESLint.
 
-### `npm run eject`
+Для запуска линтинга можно использовать команду:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+npm run lint
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Для запуска автоисправления линтинга можно использовать команду:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+npm run lint:fix
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## В проекте использованы библиотеки
 
-## Learn More
+- [x] Typescript;
+- [x] React Router;
+- [x] Ant Design;
+- [x] react-icons;
+- [x] react-loader-spinner;
+- [x] prettier;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Дополнительные пояснения:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Для общего дизайна использована библиотека UI-компонентов **Ant Design**.
+
+React Router использован для навигации между страницами **Home** / **Contacts** / **Not Found**  
+Рендер вложенных страниц реализован через компонент `<Outlet />` библиотеки `react-router-dom`  
+Также реализовано управление неавторизованным пользователем через хук `useNavigate`.
+
+Реализована **фильтрация** (поиск) в соответствии с ТЗ по уровню, нации и классу на клиентской стороне.  
+**Логика поиска** вынесена в кастомный хук `useSearch`, который фактически дополняет хук `useControlTable`, предоставляя последнему метод сортировки, добавляемый в конкретные столбцы таблицы.  
+Поиск может проводиться по требуемым столбцам `Уровень` / `Нация` / `Класс` , а также дополнительно по `Названию`(возможна одновременная фильтрация по условиям во всех четырех столбцах).
+
+Кроме того в главной таблице данных реализована **_сортировка по уровню (силе)_** непосредственно в самом столбце `Уровень` и по отдельной кнопке, а также сброс условия сортировки на отдельной кнопке (логика управления - в вышеуказанном кастомном хуке `useControlTable`).
+
+Работа с **SVG** организована и с использованием иконок библиотеки `react-icons`, и с использованием локальных файлов из директории `assets/icons`.
+
+Библиотека **_react-loader-spinner_** - минималистичная библиотека анимированных спиннеров, готовых к использованию с возможностью небольшой кастомизации. Использована в компоненте `Loader`'а.
+
+Настроен адаптивный дизайн для таблицы (весь сайт адаптивен).
+
+---
+
+Любые замечания по работе приложения приветствуются 😊

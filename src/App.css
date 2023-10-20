@@ -1,38 +1,66 @@
-.App {
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentWrapper {
+  padding: 24px;
+  background-color: #f7e29a;
+  flex-direction: column;
+
+  margin: 1rem 0;
+  min-height: 70vmin;
+}
+
+.carouselWrapper {
+  display: flex !important;
+}
+
+.carouselDots button {
+  margin: 10px 3px 0 3px;
+}
+
+.carouselDots .slick-active button::after {
+  height: 4px;
+  border-radius: 3px;
+  background-color: aliceblue;
+  margin: 5px 3px 0 3px;
+}
+
+.tableControls {
+  margin: 1rem 0 1.5rem 0;
+  gap: 1rem;
+}
+
+.contactsList {
+  flex-direction: column;
+  gap: 0.8rem;
+  list-style: none;
+  padding: 0;
+}
+
+.contactsList > li {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.socials {
+  gap: 0.8rem;
+  list-style: none;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.socialIcon {
+  max-height: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .mobileAdaptive {
+    flex-direction: column;
+    gap: 0.5rem;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .tableControls {
+    display: none;
   }
 }
