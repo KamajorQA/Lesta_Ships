@@ -1,9 +1,8 @@
 import { Menu } from 'antd';
-import { FaPaw } from 'react-icons/fa';
-import { LuCat } from 'react-icons/lu';
-import { LiaUserCircle } from 'react-icons/lia';
-import { MdFavoriteBorder } from 'react-icons/md';
+import { BiSolidShip } from 'react-icons/bi';
 import { LiaMailBulkSolid } from 'react-icons/lia';
+
+import { ReactComponent as WarshipsEmblem } from '../assets/icons/WarshipsEmblem.svg';
 
 import { useControlNavigation } from '../hooks/useControlNavigation';
 
@@ -19,7 +18,19 @@ function MenuComponent() {
         {
           key: '/',
           label: 'Home',
-          icon: <FaPaw />,
+          icon: (
+            <WarshipsEmblem
+              style={{
+                maxHeight: '1rem',
+                maxWidth: '1rem',
+              }}
+            />
+          ),
+        },
+        {
+          key: '/shipslist',
+          label: 'Ships List',
+          icon: <BiSolidShip />,
         },
         {
           key: 'contacts',

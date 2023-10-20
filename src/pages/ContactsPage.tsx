@@ -13,7 +13,7 @@ function ContactsPage() {
         padding: '20px 50px',
       }}
     >
-      <TitleComponent level={2}>Contacts page</TitleComponent>
+      <TitleComponent level={2}>Author contacts</TitleComponent>
       <section className="flexCenter contentWrapper">
         <ul className="flexCenter contactsList">
           <li>

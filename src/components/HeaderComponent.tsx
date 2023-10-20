@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { Button, Layout, theme } from 'antd';
 
-import { FaPaw } from 'react-icons/fa';
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from 'react-icons/ai';
 
+import { ReactComponent as WarshipsLogo } from '../assets/icons/World of Warships.svg';
 import { SiderContext } from '../context/SiderContext';
 import { useControlNavigation } from '../hooks/useControlNavigation';
 
@@ -30,13 +30,14 @@ function HeaderComponent() {
         alignItems: 'center',
       }}
     >
-      <FaPaw
+      <WarshipsLogo
         style={{
-          fontSize: '1.5rem',
-          margin: '0 1rem',
+          maxWidth: '3.5rem',
+          marginLeft: '1rem',
           color: colorPrimary,
           cursor: 'pointer',
         }}
+        className="ant-menu-item"
         onClick={goHome}
       />
 

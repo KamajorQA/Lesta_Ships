@@ -14,14 +14,18 @@ root.render(
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: '#fadb14',
-          colorBgContainer: '#f7e29a',
-          colorBgLayout: '#f7ca2f',
+          colorPrimary: '#1ea5bb',
+          // colorPrimary: '#1677ff',
+          colorBgContainer: '#0e5977',
+          colorBgLayout: '#102032',
           borderRadius: 16,
-          fontFamily: 'Caveat',
+          fontFamily: 'Play',
           fontSize: 16,
-          colorBorder: '#f7ca2f',
+          colorBorder: '#102032',
           colorPrimaryHover: '#818cf880',
+          // colorText: '#818cf880',
+          // colorText: '#1677ff',
+          colorText: '#ebfaf9',
         },
       }}
     >

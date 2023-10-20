@@ -1,9 +1,16 @@
+:root {
+  --colorPrimary: #1ea6bb5b;
+  --colorAccent: #1677ff;
+  --colorText: #ebfaf9;
+}
+
 body {
   margin: 0;
-  font-family: 'Caveat', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+  font-family: 'Play', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--colorText);
 }
 
 code {

@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<HomePage />} />
-            {/* <Route path="cats/:catId" element={<SingleCatPage />} /> */}
+            {/* <Route path="ships/:shipId" element={<SingleShipPage />} /> */}
             {/* <Route path="favorites" element={<FavoritePage />} /> */}
             {/* <Route path="userinfo" element={<UserInfoPage />} /> */}
             {/* <Route path="newcat" element={<CreateCatPage />} /> */}

@@ -6,11 +6,11 @@
 
 .contentWrapper {
   padding: 24px;
-  background-color: #f7e29a;
+  background-color: var(--colorPrimary);
   flex-direction: column;
-
   margin: 1rem 0;
   min-height: 70vmin;
+  border-radius: 1.5rem;
 }
 
 .carouselWrapper {
@@ -52,6 +52,14 @@
 
 .socialIcon {
   max-height: 1.5rem;
+}
+
+.ant-menu-item {
+  fill: var(--colorText);
+}
+
+.ant-menu-item-selected {
+  fill: var(--colorPrimary);
 }
 
 @media (max-width: 768px) {

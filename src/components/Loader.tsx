@@ -1,4 +1,4 @@
-import { ThreeCircles } from 'react-loader-spinner';
+import { Rings } from 'react-loader-spinner';
 import { Layout } from 'antd';
 
 import { TitleComponent } from './Title';
@@ -14,14 +14,13 @@ function Loader() {
       <TitleComponent level={2}>Loading</TitleComponent>
 
       <main className="flexCenter contentWrapper">
-        <ThreeCircles
-          height="100"
-          width="100"
-          color="#fadb14"
+        <Rings
+          height="80"
+          width="80"
+          color="#1ea6bb5b"
+          radius="6"
           visible={true}
-          ariaLabel="three-circles-rotating"
-          innerCircleColor="rgba(0, 147, 255, 0.35)"
-          middleCircleColor="#f7ca2f"
+          ariaLabel="rings-loading"
         />
       </main>
     </Content>

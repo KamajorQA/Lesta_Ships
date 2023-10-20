@@ -25,7 +25,7 @@ function HomePage() {
             padding: '20px 50px',
           }}
         >
-          <TitleComponent level={2}>Ships list</TitleComponent>
+          <TitleComponent level={2}>Warships list</TitleComponent>
 
           <section className="flexCenter contentWrapper">
             <ShipsTable />

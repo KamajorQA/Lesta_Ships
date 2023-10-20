@@ -41,15 +41,11 @@ function useControlTable() {
             class: el.type.title,
           };
         });
-        // setShips(fetchedShips);
         setShips(arrangedShips);
       })
       .catch((error) => setErrorMessage(error.message))
       .finally(() => setIsLoading(false));
   };
-
-  // console.log(1, 'all Ships', ships);
-  console.log(2, 'one ship', ships[0]);
 
   useEffect(() => {
     requestAllShips(`query allShips {
@@ -137,7 +133,7 @@ function useControlTable() {
       dataIndex: 'class',
       key: 'class',
       ...getColumnSearchProps('class'),
-      responsive: ['md'],
+      responsive: ['lg'],
     },
 
     {
@@ -170,7 +166,7 @@ function useControlTable() {
           {text}
         </Typography.Paragraph>
       ),
-      responsive: ['lg'],
+      responsive: ['xl'],
     },
 
     {
