@@ -15,7 +15,6 @@ root.render(
       theme={{
         token: {
           colorPrimary: '#1ea5bb',
-          // colorPrimary: '#1677ff',
           colorBgContainer: '#0e5977',
           colorBgLayout: '#102032',
           borderRadius: 16,
@@ -23,9 +22,13 @@ root.render(
           fontSize: 16,
           colorBorder: '#102032',
           colorPrimaryHover: '#818cf880',
-          // colorText: '#818cf880',
-          // colorText: '#1677ff',
           colorText: '#ebfaf9',
+        },
+        components: {
+          Select: {
+            optionActiveBg: '#1ea6bb5b',
+            optionSelectedBg: '#1ea5bb',
+          },
         },
       }}
     >

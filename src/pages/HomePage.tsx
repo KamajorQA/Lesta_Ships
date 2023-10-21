@@ -12,9 +12,9 @@ function HomePage() {
   return (
     <>
       {errorMessage && (
-        <div className="flexCenter">
+        <div style={{ textAlign: 'center' }}>
           <p>Ошибка при загрузке данных с сервера.</p>
-          <p>{errorMessage}</p>
+          <p className="error">{errorMessage}</p>
         </div>
       )}
       {isLoading ? (

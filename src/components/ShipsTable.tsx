@@ -21,7 +21,8 @@ function ShipsTable() {
         pagination={{
           position: ['bottomCenter'],
           hideOnSinglePage: true,
-          pageSize: 5,
+          defaultPageSize: 5,
+          pageSizeOptions: ['3', '5', '10', '20', '50'],
         }}
       />
     </>

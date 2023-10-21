@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { Button, Input, Space } from 'antd';
 import { BiSearchAlt } from 'react-icons/bi';
+import { AiFillFilter } from 'react-icons/ai';
 
 import { IShipsData } from '../models/data';
 
@@ -58,7 +59,7 @@ function useSearch() {
             icon={
               <BiSearchAlt
                 style={{
-                  color: '#818cf880',
+                  color: '#102032',
                 }}
               />
             }
@@ -96,7 +97,7 @@ function useSearch() {
       </div>
     ),
     filterIcon: (filtered: boolean) => (
-      <BiSearchAlt style={{ color: filtered ? '#fff' : undefined }} />
+      <AiFillFilter style={{ color: filtered ? '#fff' : undefined }} />
     ),
     onFilter: (value, record) =>
       record[dataIndex]

@@ -62,6 +62,14 @@
   fill: var(--colorPrimary);
 }
 
+.ant-select-dropdown {
+  background-color: var(--colorBg);
+}
+
+.error {
+  color: var(--error);
+}
+
 @media (max-width: 768px) {
   .mobileAdaptive {
     flex-direction: column;
