@@ -66,6 +66,47 @@
   background-color: var(--colorBg);
 }
 
+.homeWrapper {
+  position: relative;
+  background: rgba(25, 40, 35, 1);
+  background: linear-gradient(
+    0deg,
+    rgba(16, 32, 50, 0.9) 0%,
+    rgba(25, 40, 35, 1) 5%,
+    rgba(2, 2, 2, 0.8) 12%,
+    rgba(2, 2, 2) 78%,
+    rgba(25, 40, 35, 1) 95%,
+    rgba(16, 32, 50, 1) 100%
+  );
+  padding-top: 7rem;
+  padding: 7rem 0;
+}
+
+.filter {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(25, 40, 35, 1);
+  background: linear-gradient(
+    0deg,
+    rgba(16, 32, 50, 0.9) 0%,
+    rgba(25, 40, 35, 1) 5%,
+    rgba(2, 2, 2) 15%,
+    transparent 20%,
+    transparent 78%,
+    rgba(2, 2, 2) 85%,
+    rgba(25, 40, 35, 1) 95%,
+    rgba(16, 32, 50, 1) 100%
+  );
+}
+
+.videoFrame {
+  z-index: 1;
+  width: 100%;
+}
+
 .error {
   color: var(--error);
 }
