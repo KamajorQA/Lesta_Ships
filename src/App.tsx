@@ -6,6 +6,7 @@ import { MainLayout } from './layouts/MainLayout';
 import './App.css';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
+const ShipsListPage = lazy(() => import('./pages/ShipsListPage'));
 const ContactsPage = lazy(() => import('./pages/ContactsPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<HomePage />} />
+            <Route path="shipslist" element={<ShipsListPage />} />
             <Route path="contacts" element={<ContactsPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>

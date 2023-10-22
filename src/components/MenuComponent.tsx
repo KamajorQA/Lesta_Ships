@@ -28,7 +28,7 @@ function MenuComponent() {
           ),
         },
         {
-          key: '/shipslist',
+          key: 'shipslist',
           label: 'Ships List',
           icon: <BiSolidShip />,
         },

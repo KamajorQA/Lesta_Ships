@@ -15,6 +15,8 @@ function useControlNavigation() {
     switch (selectedKey) {
       case '/':
         return ['/'];
+      case '/shipslist':
+        return ['shipslist'];
       case '/contacts':
         return ['contacts'];
       default:
