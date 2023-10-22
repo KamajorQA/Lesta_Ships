@@ -11,6 +11,7 @@ function MainLayout() {
     <Layout
       style={{
         minHeight: '100vh',
+        overflow: 'hidden',
       }}
     >
       <>

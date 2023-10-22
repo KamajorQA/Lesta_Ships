@@ -137,7 +137,7 @@ function HomeOverlay() {
         Find it out!
       </motion.p>
       <motion.div
-        className=" contentRight buttonCall"
+        className="contentRight buttonCall"
         initial={'hidden'}
         animate={'visible'}
         transition={{
