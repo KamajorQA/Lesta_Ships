@@ -54,6 +54,22 @@
   max-height: 1.5rem;
 }
 
+.target {
+  cursor: url(./assets/cursors/targetCursor.cur), pointer;
+}
+
+button,
+a,
+.ant-dropdown-trigger,
+.ant-table-column-has-sorters,
+.ant-select-item,
+.ant-pagination-item,
+.ant-menu-item,
+.ant-typography-copy,
+.ant-image-mask {
+  cursor: url(./assets/cursors/targetCursor.cur), pointer !important;
+}
+
 .ant-menu-item {
   fill: var(--colorText);
 }
@@ -100,6 +116,27 @@
     rgba(25, 40, 35, 1) 95%,
     rgba(16, 32, 50, 1) 100%
   );
+}
+
+.paragraph {
+  margin: 0;
+  padding: 6rem 10% 0 10%;
+  font-size: 1.5rem;
+  display: flex;
+}
+
+.contentRight {
+  padding-top: 2rem;
+  justify-content: flex-end;
+}
+
+.actionCall {
+  color: var(--colorPrimary);
+}
+
+.buttonCall {
+  display: flex;
+  padding-right: 8.5%;
 }
 
 .videoFrame {

@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { Button, Layout, theme } from 'antd';
+import { motion } from 'framer-motion';
 
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from 'react-icons/ai';
 
@@ -26,34 +27,76 @@ function HeaderComponent() {
         padding: 0,
         background: colorBgLayout,
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         alignItems: 'center',
+        position: 'relative',
       }}
     >
-      <WarshipsLogo
+      <motion.div
+        className="flexCenter"
         style={{
-          maxWidth: '3.5rem',
+          position: 'absolute',
+          left: 0,
+          width: '3.5rem',
           marginLeft: '1rem',
-          color: colorPrimary,
-          cursor: 'pointer',
         }}
-        className="ant-menu-item"
-        onClick={goHome}
-      />
+        initial={{
+          y: -200,
+          opacity: 0,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 1,
+          delay: 1.5,
+          type: 'spring',
+          ease: 'easeInOut',
+        }}
+      >
+        <WarshipsLogo
+          style={{
+            maxWidth: '3.5rem',
+            color: colorPrimary,
+          }}
+          className="ant-menu-item target"
+          onClick={goHome}
+        />
+      </motion.div>
 
       <TitleComponent level={4}>Lesta Games</TitleComponent>
 
-      <Button
-        type="text"
-        icon={collapsed ? <AiOutlineMenuFold /> : <AiOutlineMenuUnfold />}
-        onClick={switchCollapse}
+      <motion.div
+        className="flexCenter"
         style={{
-          fontSize: '1rem',
-          width: 64,
-          height: 64,
-          justifySelf: 'end',
+          position: 'absolute',
+          right: '0',
         }}
-      />
+        initial={{
+          x: 100,
+          opacity: 0,
+        }}
+        animate={{
+          x: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 2,
+          delay: 2,
+        }}
+      >
+        <Button
+          type="text"
+          icon={collapsed ? <AiOutlineMenuFold /> : <AiOutlineMenuUnfold />}
+          onClick={switchCollapse}
+          style={{
+            fontSize: '1rem',
+            width: 64,
+            height: 64,
+          }}
+        />
+      </motion.div>
     </Header>
   );
 }
